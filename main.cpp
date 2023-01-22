@@ -158,22 +158,51 @@ void displayErrorMessage(int errorCode, char delimiter = ' ')
 /*
  6)
  */
+bool checkForUpdates(int moduleType, bool useProxy = false, 
+    bool ignoreWarnings = false, bool userMustConfirm = true)
+{
+    ignoreUnused(moduleType, useProxy, ignoreWarnings, userMustConfirm);
+    return {};
+}
 
 /*
  7)
  */
+int establishModulationLink(int sourceParameterIndex, int targetParameterIndex,
+    float modulationStrength = 1.0f, float skewFactor = 0.5f)
+{
+    ignoreUnused(sourceParameterIndex, 
+        targetParameterIndex,
+        modulationStrength, skewFactor);
+    
+    return {};
+}
 
 /*
  8)
  */
+bool removeModulationLink(int linkIndex, bool forceRemoval = false) {
+    ignoreUnused(linkIndex, forceRemoval);
+    return {};
+}
 
 /*
  9)
  */
+void startRecordingUserGesture(int componentIndex, int timeoutInSeconds = 20)
+{
+    ignoreUnused(componentIndex, timeoutInSeconds);
+}
 
 /*
  10)
  */
+int findFirstPlayingVoice(bool keyPressed, bool sustained, 
+    int minVelocity = 0, int maxVelocity = 127)
+{
+    ignoreUnused(keyPressed, sustained, minVelocity, maxVelocity);
+    return {};
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -210,21 +239,29 @@ int main()
     displayErrorMessage(220);
     
     //6)
+    auto updateAvailable = checkForUpdates(5, true, true);
     
     //7)
+    auto linkIndex = establishModulationLink(10, 20, 0.2f);
     
     //8)
+    auto removeOk = removeModulationLink(5, true);
     
     //9)
+    startRecordingUserGesture(12, 60);
     
     //10)
-    
+    auto voiceIndex = findFirstPlayingVoice(true, false, 30);
     
     ignoreUnused(carRented, 
         distanceOfEarthFromSun,
         distanceToZero,
-        movePlayheadSucceeded
-        );
+        movePlayheadSucceeded,
+        updateAvailable,
+        linkIndex,
+        removeOk,
+        voiceIndex);
+    
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
