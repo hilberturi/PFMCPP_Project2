@@ -92,12 +92,12 @@ void variableDeclarations()
     double sampleRate = 44100.;
         
     ignoreUnused(number, 
-        enableHighQualityRendering, showRegistrationPopup, hideKeyboard,
-        delimiter, space, newline,
-        smallestNegativeInt, largestPositiveInt, bufferSize,
-        zero, radius, distance,
-        angle, angularVelocity, sampleRate
-        ); //passing each variable declared to the ignoreUnused() function
+                 enableHighQualityRendering, 
+                 showRegistrationPopup, hideKeyboard,
+                 delimiter, space, newline,
+                 smallestNegativeInt, largestPositiveInt, bufferSize,
+                 zero, radius, distance,
+                 angle, angularVelocity, sampleRate);
 }
 
 /*
@@ -124,7 +124,7 @@ float computeDistanceFromSun(int planetIndex, bool useMetricSystem = false)
  2)
  */
 double computeDistanceOfPoints(int xPoint1, int yPoint1, 
-    int xPoint2 = 0, int yPoint2 = 0) 
+                               int xPoint2 = 0, int yPoint2 = 0) 
 {
     ignoreUnused(xPoint1, yPoint1, xPoint2, yPoint2);
     return {};
@@ -158,8 +158,10 @@ void displayErrorMessage(int errorCode, char delimiter = ' ')
 /*
  6)
  */
-bool checkForUpdates(int moduleType, bool useProxy = false, 
-    bool ignoreWarnings = false, bool userMustConfirm = true)
+bool checkForUpdates(int moduleType, 
+                     bool useProxy = false, 
+                     bool ignoreWarnings = false, 
+                     bool userMustConfirm = true)
 {
     ignoreUnused(moduleType, useProxy, ignoreWarnings, userMustConfirm);
     return {};
@@ -168,20 +170,22 @@ bool checkForUpdates(int moduleType, bool useProxy = false,
 /*
  7)
  */
-int establishModulationLink(int sourceParameterIndex, int targetParameterIndex,
-    float modulationStrength = 1.0f, float skewFactor = 0.5f)
+int establishModulationLink(int sourceParameterIndex, 
+                            int targetParameterIndex,
+                            float modulationStrength = 1.0f, 
+                            float skewFactor = 0.5f)
 {
     ignoreUnused(sourceParameterIndex, 
-        targetParameterIndex,
-        modulationStrength, skewFactor);
-    
+                 targetParameterIndex,
+                 modulationStrength, skewFactor);    
     return {};
 }
 
 /*
  8)
  */
-bool removeModulationLink(int linkIndex, bool forceRemoval = false) {
+bool removeModulationLink(int linkIndex, bool forceRemoval = false)
+{
     ignoreUnused(linkIndex, forceRemoval);
     return {};
 }
@@ -198,7 +202,7 @@ void startRecordingUserGesture(int componentIndex, int timeoutInSeconds = 20)
  10)
  */
 int findFirstPlayingVoice(bool keyPressed, bool sustained, 
-    int minVelocity = 0, int maxVelocity = 127)
+                          int minVelocity = 0, int maxVelocity = 127)
 {
     ignoreUnused(keyPressed, sustained, minVelocity, maxVelocity);
     return {};
@@ -254,13 +258,13 @@ int main()
     auto voiceIndex = findFirstPlayingVoice(true, false, 30);
     
     ignoreUnused(carRented, 
-        distanceOfEarthFromSun,
-        distanceToZero,
-        movePlayheadSucceeded,
-        updateAvailable,
-        linkIndex,
-        removeOk,
-        voiceIndex);
+                 distanceOfEarthFromSun,
+                 distanceToZero,
+                 movePlayheadSucceeded,
+                 updateAvailable,
+                 linkIndex,
+                 removeOk,
+                 voiceIndex);
     
     std::cout << "good to go!" << std::endl;
     return 0;    
